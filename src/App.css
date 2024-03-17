@@ -1,32 +1,338 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+:root{
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --foreground: #333;
+  --background: white;
+}
+
+.newlabel{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: var(--hamburger-gap);
+width: max-content;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 2;
+  cursor: pointer;
+  transform: translateY(50%);
+
 }
 
-.App-link {
-  color: #61dafb;
+
+.newlabel::before,
+.newlabel::after,
+.newlabel input{
+  content:"";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
 }
+
+.newlabel input{
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events:   none;
+
+
+}
+
+
+
+
+.container{
+  contain: layout;
+max-width: 100%;
+
+}
+
+.centerlogo {
+ transform: translateX(40%);
+  margin: 0px;
+
+}
+
+.logo {
+  width: 20%;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+.nav{
+display: block;
+width: 100%;
+  background-color: darkolivegreen;
+  height: 83vh;
+  position: relative;
+  transform: translateY(-2%);
+}
+
+
+.shoppingcart{
+  width: 90px;
+  position: absolute;
+  left: 93%;
+  top: -1%;
+
+}
+
+.menu{
+  position: absolute; /* Or 'relative' based on your layout needs */
+  z-index: 10; /* Higher than .nav's z-index ensures it's on top */
+  transform: translateZ(0);
+  transform: translateX(-20%);
+
+
+
+}
+
+.dropdown{
+  width: 150px;
+  height: 10vh;
+position: absolute;
+  background-color: white;
+
+  border: black;
+  z-index: 9;
+  transform: translateZ(0);
+  transform: translate(0,-17%);
+}
+
+.little{
+  font-size: 500%;
+  margin: 0;
+  padding: 0;
+color: yellow;
+  gap: 0;
+
+}
+.chicago{
+  color: white;
+  margin: 0;
+
+}
+
+
+
+.freshcod, .loadedtuna{
+  width: 10%;
+border-radius: 10px;
+}
+
+.freshcod{
+  position: absolute;
+  left: 45%;
+  top: 10%;
+}
+
+.loadedtuna{
+  position: absolute;
+  left: 65%;
+  top: 10%;
+}
+
+.greeksalad{
+  position: absolute;
+  left: 85%;
+  top: 10%;
+  border-radius: 10px;
+  width: 9%;
+  height: 30vh;
+}
+
+.freshcodlabel,.greeksaladlabel,.loadedtunalabel{
+  font-size: 150%;
+  font-style: italic;
+
+}
+
+.freshcodlabel{
+  position: absolute;
+  left: 45.5%;
+  top: 41.5%;
+}
+
+.loadedtunalabel{
+  position: absolute;
+  left: 64.6%;
+  top: 41.5%;
+}
+
+.greeksaladlabel{
+  position: absolute;
+  left: 84.1%;
+  top: 41.5%;
+}
+
+.codtext{
+  width: 15%;
+  position: absolute;
+  left: 45.5%;
+  top: 46.5%;
+}
+
+.tunatext{
+  width: 15%;
+  position: absolute;
+  left: 64.6%;
+  top: 46.5%;
+}
+
+.saladtext{
+  width: 15%;
+  position: absolute;
+  left: 84.1%;
+  top: 46.5%;
+}
+
+.codcart{
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  left: 45.5%;
+  top: 82.5%;
+}
+
+.tunacart{
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  left: 64.6%;
+  top: 82.5%;
+}
+
+.saladcart{
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  left: 84.1%;
+  top: 82.5%;
+}
+
+
+.today{
+  position: absolute;
+  left:60%;
+  top: -8%;
+  font-size: 300%;
+  font-style: italic;
+
+}
+
+
+.synopsis{
+  font-size: 110%;
+  width: 25%;
+}
+
+.reserve{
+  position: absolute;
+  cursor: pointer;
+  width: 10%;
+  height: 10vh;
+  border-radius: 100px;
+  font-size: 150%;
+  left: 10px;
+
+}
+
+.menubutton{
+  cursor: pointer;
+  width: 10%;
+  height: 10vh;
+  border-radius: 100px;
+  font-size: 150%;
+  position: absolute;
+  left: 190px;
+}
+
+.saladcart:hover,.codcart:hover,.tunacart:hover{
+    background-color: blue;
+
+}
+
+.codminus{
+  cursor: pointer;
+  position: absolute;
+  left: 45.5%;
+  top: 86.5%;
+
+}
+
+.codplus{
+  cursor: pointer;
+  position: absolute;
+  left: 49.5%;
+  top: 86.5%;
+}
+
+.codcounts{
+  position: absolute;
+  left: 47.9%;
+  top: 84.1%;
+}
+
+.tunaminus{
+  cursor: pointer;
+  position: absolute;
+  left: 64.6%;
+  top: 86.5%;
+}
+.tunaplus{
+  cursor: pointer;
+  position: absolute;
+  left: 68.6%;
+  top: 86.5%;
+}
+.tunacounts{
+  position: absolute;
+  left: 67%;
+  top: 84.1%;
+}
+.saladminus{
+  cursor: pointer;
+  position: absolute;
+  left: 84.1%;
+  top: 86.5%;
+}
+.saladplus{
+  cursor: pointer;
+  position: absolute;
+  left: 88.1%;
+  top: 86.5%;
+}
+.saladcounts{
+  position: absolute;
+  left: 86.5%;
+  top: 84.1%;
+}
+
+.homebutton{
+  cursor: pointer;
+  border-color: black;
+
+}
+
+.reservationbutton{
+  cursor: pointer;
+  border-color: black;
+}
+
+
+
+
 
 @keyframes App-logo-spin {
   from {
